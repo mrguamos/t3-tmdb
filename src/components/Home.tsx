@@ -12,9 +12,13 @@ const Home = ({ popularMovies, popularTVS }: Props) => {
   return (
     <div className="px-10">
       <div className="flex w-full flex-col gap-y-5">
-        <span className="text-2xl font-normal">Popular Movies</span>
+        <span className="text-center text-2xl font-normal md:text-left">
+          Popular Movies
+        </span>
         <PopularCarousel items={popularMovies} />
-        <span className="text-2xl font-normal">Popular TV Shows</span>
+        <span className="text-center text-2xl font-normal md:text-left">
+          Popular TV Shows
+        </span>
         <PopularCarousel items={popularTVS} />
       </div>
     </div>
