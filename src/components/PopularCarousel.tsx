@@ -15,17 +15,15 @@ const PopularCarousel = ({ items }: Props) => {
   return (
     <Swiper
       freeMode
-      cssMode
       slidesPerView={'auto'}
       slidesPerGroup={1}
       loop={true}
       centeredSlides
-      loopedSlides={0}
       loopFillGroupWithBlank={true}
       navigation={true}
       modules={[FreeMode, Pagination, Navigation]}
       spaceBetween={30}
-      className={'w-full'}
+      className={'flex w-full'}
     >
       {items.results?.map((item) => {
         return (
