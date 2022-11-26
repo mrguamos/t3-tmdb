@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    @apply bg-zinc-900 text-white
+}
+
+.swiper-slide {
+    width: auto !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    --swiper-navigation-color: theme(colors.white);
+    --swiper-navigation-size: 30px;
+    @apply bg-black/50 rounded-full p-7 hover:bg-black/70
+}

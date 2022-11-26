@@ -1,0 +1,4 @@
+.cls{
+    fill:url(#linear-gradient);
+    @apply bg-blue-500
+}
