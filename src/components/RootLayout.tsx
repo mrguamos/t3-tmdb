@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col items-center justify-center py-5">
+      <div className="flex flex-col items-center justify-center">
         <div className="flex items-center gap-x-10">
           <NextIcon />
           <TMDBIcon className="w-20" />
