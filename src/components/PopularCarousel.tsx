@@ -19,11 +19,10 @@ const PopularCarousel = ({ items }: Props) => {
       slidesPerView={'auto'}
       slidesPerGroup={1}
       loop={true}
-      centeredSlides
       loopFillGroupWithBlank={true}
       navigation={true}
       modules={[Lazy, FreeMode, Pagination, Navigation]}
-      spaceBetween={30}
+      spaceBetween={20}
       className={'flex w-full'}
     >
       {items.results?.map((item) => {
