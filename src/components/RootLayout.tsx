@@ -3,6 +3,8 @@ import Head from 'next/head'
 import NextIcon from './NextIcon'
 import TMDBIcon from './TMDBIcon'
 import { Lato } from '@next/font/google'
+import Footer from './Footer'
+import Link from 'next/link'
 
 const lato = Lato({
   weight: ['100', '300', '400', '700', '900'],
@@ -21,11 +23,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </Head>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center gap-x-10">
-          <NextIcon />
-          <TMDBIcon className="w-20" />
+          <Link href={'https://nextjs.org/'} target={'_blank'}>
+            <NextIcon />
+          </Link>
+          <Link href={'https://www.themoviedb.org/'} target={'_blank'}>
+            <TMDBIcon className="w-20" />
+          </Link>
         </div>
       </div>
       {children}
+      <Footer />
     </div>
   )
 }

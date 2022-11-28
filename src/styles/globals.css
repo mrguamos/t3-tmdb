@@ -4,7 +4,7 @@
 
 
 body {
-    @apply bg-zinc-900 text-white
+    @apply bg-neutral-900 text-white
 }
 
 .swiper-slide {
@@ -18,3 +18,7 @@ body {
 }
 
 .slick-slide > div { margin: 0 10px; }
+
+.swiper-wrapper {
+    @apply space-x-2 lg:space-x-5
+}

@@ -21,8 +21,7 @@ const PopularCarousel = ({ items }: Props) => {
       loopFillGroupWithBlank={true}
       navigation={true}
       modules={[Lazy, FreeMode, Pagination, Navigation]}
-      spaceBetween={20}
-      className={'flex w-full'}
+      className={'flex w-full space-x-2'}
       style={{
         overflow: 'visible',
         clipPath: 'inset( -100vw -100vw -100vw 0 )',
