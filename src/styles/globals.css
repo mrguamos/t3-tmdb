@@ -18,7 +18,3 @@ body {
 }
 
 .slick-slide > div { margin: 0 10px; }
-
-.swiper-wrapper {
-    @apply space-x-2 lg:space-x-5
-}

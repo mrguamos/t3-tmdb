@@ -1,4 +1,8 @@
-import type { PopularMoviesType } from '../types/movies'
+import type {
+  PopularMoviesType,
+  TopMoviesType,
+  UpcomingMoviesType,
+} from '../types/movies'
 import type { PopularTVSType } from '../types/tv'
 import MediaCard from './MediaCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -8,7 +12,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 type Props = {
-  items: PopularMoviesType | PopularTVSType
+  items: PopularMoviesType | PopularTVSType | TopMoviesType | UpcomingMoviesType
 }
 
 const PopularCarousel = ({ items }: Props) => {
@@ -16,6 +20,7 @@ const PopularCarousel = ({ items }: Props) => {
     <Swiper
       freeMode
       lazy={true}
+      spaceBetween={10}
       slidesPerView={'auto'}
       slidesPerGroup={1}
       loopFillGroupWithBlank={true}

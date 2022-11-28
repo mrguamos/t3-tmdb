@@ -3,9 +3,13 @@ import type {
   InferGetServerSidePropsType,
   NextPage,
 } from 'next'
+import TheMovies from '../components/TheMovies'
 import tmdbHandler from '../services/tmdb'
-import type { PopularMoviesType } from '../types/movies'
-import type { PopularTVSType } from '../types/tv'
+import type {
+  PopularMoviesType,
+  TopMoviesType,
+  UpcomingMoviesType,
+} from '../types/movies'
 
 async function getPopularMovies(page = 1): Promise<PopularMoviesType> {
   const moviesResponse = await tmdbHandler(`movie/popular?page=${page}`)
@@ -13,29 +17,45 @@ async function getPopularMovies(page = 1): Promise<PopularMoviesType> {
   return moviesJson
 }
 
-async function getPopularTVS(page = 1): Promise<PopularTVSType> {
-  const tvsResponse = await tmdbHandler(`tv/popular?page=${page}`)
-  const tvsJson = await tvsResponse.json()
-  return tvsJson
+async function getTopMovies(page = 1): Promise<TopMoviesType> {
+  const moviesResponse = await tmdbHandler(`movie/top_rated?page=${page}`)
+  const moviesJson = await moviesResponse.json()
+  return moviesJson
+}
+
+async function getUpcomingMovies(page = 1): Promise<UpcomingMoviesType> {
+  const moviesResponse = await tmdbHandler(`movie/upcoming?page=${page}`)
+  const moviesJson = await moviesResponse.json()
+  return moviesJson
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const [popularMovies, popularTVS] = await Promise.all([
+  const [popularMovies, topMovies, upcomingMovies] = await Promise.all([
     getPopularMovies(),
-    getPopularTVS(),
+    getTopMovies(),
+    getUpcomingMovies(),
   ])
   return {
     props: {
       popularMovies,
-      popularTVS,
+      topMovies,
+      upcomingMovies,
     }, // will be passed to the page component as props
   }
 }
 
-const Movies: NextPage = ({}: InferGetServerSidePropsType<
-  typeof getServerSideProps
->) => {
-  return <div>Movies</div>
+const Movies: NextPage = ({
+  popularMovies,
+  topMovies,
+  upcomingMovies,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  return (
+    <TheMovies
+      popularMovies={popularMovies}
+      topMovies={topMovies}
+      upcomingMovies={upcomingMovies}
+    />
+  )
 }
 
 export default Movies
