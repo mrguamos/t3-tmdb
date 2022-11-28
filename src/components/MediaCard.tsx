@@ -45,9 +45,13 @@ const MediaCard = (props: Props) => {
       </div>
       <span className="truncate">{details.name || details.title}</span>
       <div className="flex w-full items-center space-x-2">
-        <span>{details.vote_average}</span>
-        <FaStar className="h-4 w-4 text-yellow-300" />
-        <span>{formatter.format(details.vote_count)}</span>
+        <div className="flex">
+          <span>{details.vote_average}</span> <span>/10</span>
+        </div>
+        <div className="flex w-full items-center space-x-1">
+          <FaStar className="h-4 w-4 text-yellow-300" />
+          <span>{formatter.format(details.vote_count)}</span>
+        </div>
       </div>
     </div>
   )
