@@ -18,12 +18,15 @@ const PopularCarousel = ({ items }: Props) => {
       lazy={true}
       slidesPerView={'auto'}
       slidesPerGroup={1}
-      loop={true}
       loopFillGroupWithBlank={true}
       navigation={true}
       modules={[Lazy, FreeMode, Pagination, Navigation]}
       spaceBetween={20}
       className={'flex w-full'}
+      style={{
+        overflow: 'visible',
+        clipPath: 'inset( -100vw -100vw -100vw 0 )',
+      }}
     >
       {items.results?.map((item) => {
         return (
