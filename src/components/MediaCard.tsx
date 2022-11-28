@@ -37,18 +37,18 @@ const MediaCard = (props: Props) => {
           src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${details.poster_path}`}
           alt={getAlt(details.title || details.name)}
           fill
-          className="h-96 w-full rounded-md shadow-2xl transition duration-300 hover:z-50 hover:scale-110"
+          className="h-96 rounded-md shadow-2xl transition duration-300 hover:z-50 hover:scale-110"
           itemType="webp"
           sizes="33vw"
           onLoadingComplete={() => setLoading(false)}
         />
       </div>
       <span className="truncate">{details.name || details.title}</span>
-      <div className="flex w-full items-center space-x-2">
+      <div className="flex items-center space-x-2">
         <div className="flex">
           <span>{details.vote_average}</span> <span>/10</span>
         </div>
-        <div className="flex w-full items-center space-x-1">
+        <div className="flex items-center space-x-1">
           <FaStar className="h-4 w-4 text-yellow-300" />
           <span>{formatter.format(details.vote_count)}</span>
         </div>
