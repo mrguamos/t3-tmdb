@@ -12,14 +12,22 @@ const Footer = () => {
         <span className="text-xl font-semibold">Next Movies</span>
       </div>
       <div className="flex w-full animate-bounce items-center justify-center space-x-5">
-        <Link href={'https://github.com/mrguamos/t3-tmdb'} target={'_blank'}>
+        <Link
+          href={'https://github.com/mrguamos/t3-tmdb'}
+          target={'_blank'}
+          aria-label="Check the source code"
+        >
           <FaGithub className="h-10 w-10" />
         </Link>
         <Link href={'https://vercel.com/'} target={'_blank'}>
-          <TbBrandVercel className="h-10 w-10" />
+          <TbBrandVercel className="h-10 w-10" aria-label="Powered by vercel" />
         </Link>
       </div>
-      <Link href={'https://github.com/mrguamos'} target={'_blank'}>
+      <Link
+        href={'https://github.com/mrguamos'}
+        target={'_blank'}
+        aria-label="Github profile"
+      >
         <span className="text-sm font-normal">© mrguamos</span>
       </Link>
     </div>
