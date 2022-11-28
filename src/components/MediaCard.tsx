@@ -37,7 +37,7 @@ const MediaCard = (props: Props) => {
           src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${details.poster_path}`}
           alt={getAlt(details.title || details.name)}
           fill
-          className="h-96 w-full rounded-md shadow-2xl"
+          className="h-96 w-full rounded-md shadow-2xl transition duration-300 hover:z-50 hover:scale-110"
           itemType="webp"
           sizes="33vw"
           onLoadingComplete={() => setLoading(false)}
