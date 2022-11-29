@@ -7,6 +7,8 @@ import type { PopularTVSType, TopTVSType, OnAirTVSType } from '../types/tv'
 import type { Settings } from 'react-slick'
 import Slider from 'react-slick'
 import MediaCard from './MediaCard'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 type Props = {
   items:
