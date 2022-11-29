@@ -1,7 +1,7 @@
 import React from 'react'
 import type { PopularTVSType, TopTVSType, OnAirTVSType } from '../types/tv'
 
-import MediaSlick from './MediaSlick'
+import EmblaCarousel from './EmblaCarousel'
 import Title from './Title'
 
 type Props = {
@@ -15,11 +15,11 @@ const TheTvShows = ({ popularTVS, topTVS, onAirTVS }: Props) => {
     <div className="w-full px-10">
       <div className="flex flex-col gap-y-5">
         <Title>Popular TV Shows</Title>
-        <MediaSlick items={popularTVS} />
+        <EmblaCarousel items={popularTVS} />
         <Title>Top Rated TV Shows</Title>
-        <MediaSlick items={topTVS} />
+        <EmblaCarousel items={topTVS} />
         <Title>On Air TV Shows</Title>
-        <MediaSlick items={onAirTVS} />
+        <EmblaCarousel items={onAirTVS} />
       </div>
     </div>
   )

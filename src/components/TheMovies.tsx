@@ -4,7 +4,7 @@ import type {
   TopMoviesType,
   UpcomingMoviesType,
 } from '../types/movies'
-import MediaSlick from './MediaSlick'
+import EmblaCarousel from './EmblaCarousel'
 import Title from './Title'
 
 type Props = {
@@ -18,11 +18,11 @@ const TheMovies = ({ popularMovies, topMovies, upcomingMovies }: Props) => {
     <div className="w-full px-10">
       <div className="flex flex-col gap-y-5">
         <Title>Popular Movies</Title>
-        <MediaSlick items={popularMovies} />
+        <EmblaCarousel items={popularMovies} />
         <Title>Top Rated Movies</Title>
-        <MediaSlick items={topMovies} />
+        <EmblaCarousel items={topMovies} />
         <Title>Upcoming Movies</Title>
-        <MediaSlick items={upcomingMovies} />
+        <EmblaCarousel items={upcomingMovies} />
       </div>
     </div>
   )

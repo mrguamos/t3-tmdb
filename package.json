@@ -10,14 +10,13 @@
   },
   "dependencies": {
     "@next/font": "^13.0.5",
+    "embla-carousel-react": "^7.0.5",
     "next": "13.0.2",
     "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
-    "react-slick": "^0.29.0",
     "sharp": "^0.31.2",
-    "slick-carousel": "^1.8.1",
     "zod": "^3.18.0"
   },
   "devDependencies": {
