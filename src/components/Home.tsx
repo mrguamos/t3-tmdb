@@ -11,7 +11,7 @@ type Props = {
 
 const Home = ({ popularMovies, popularTVS }: Props) => {
   return (
-    <div className="px-5 md:px-10">
+    <div className="px-10">
       <div className="flex flex-col gap-y-5">
         <Title>Popular Movies</Title>
         <MediaSlick items={popularMovies} />
