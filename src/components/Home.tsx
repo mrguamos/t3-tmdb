@@ -1,7 +1,7 @@
 import React from 'react'
 import type { PopularMoviesType } from '../types/movies'
 import type { PopularTVSType } from '../types/tv'
-import PopularCarousel from './PopularCarousel'
+import MediaCarousel from './MediaCarousel'
 import Title from './Title'
 
 type Props = {
@@ -14,9 +14,9 @@ const Home = ({ popularMovies, popularTVS }: Props) => {
     <div className="overflow-x-hidden px-5 md:px-10">
       <div className="flex flex-col gap-y-5">
         <Title>Popular Movies</Title>
-        <PopularCarousel items={popularMovies} />
+        <MediaCarousel items={popularMovies} />
         <Title>Popular TV Shows</Title>
-        <PopularCarousel items={popularTVS} />
+        <MediaCarousel items={popularTVS} />
       </div>
     </div>
   )

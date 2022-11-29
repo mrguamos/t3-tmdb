@@ -50,7 +50,9 @@ const Footer = () => {
         target={'_blank'}
         aria-label="Github profile"
       >
-        <span className="text-sm font-normal">© mrguamos</span>
+        <span className="flex items-center text-sm font-normal">
+          © mrguamos
+        </span>
       </Link>
     </div>
   )

@@ -3,39 +3,51 @@ import type {
   InferGetServerSidePropsType,
   NextPage,
 } from 'next'
+import TheTvShows from '../components/TheTvShows'
 import tmdbHandler from '../services/tmdb'
-import type { PopularMoviesType } from '../types/movies'
-import type { PopularTVSType } from '../types/tv'
+import type { PopularTVSType, TopTVSType, OnAirTVSType } from '../types/tv'
 
-async function getPopularMovies(page = 1): Promise<PopularMoviesType> {
-  const moviesResponse = await tmdbHandler(`movie/popular?page=${page}`)
+async function getPopularTVS(page = 1): Promise<PopularTVSType> {
+  const moviesResponse = await tmdbHandler(`tv/popular?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson
 }
 
-async function getPopularTVS(page = 1): Promise<PopularTVSType> {
-  const tvsResponse = await tmdbHandler(`tv/popular?page=${page}`)
-  const tvsJson = await tvsResponse.json()
-  return tvsJson
+async function getTopTVS(page = 1): Promise<TopTVSType> {
+  const moviesResponse = await tmdbHandler(`tv/top_rated?page=${page}`)
+  const moviesJson = await moviesResponse.json()
+  return moviesJson
+}
+
+async function getOnAirTVS(page = 1): Promise<OnAirTVSType> {
+  const moviesResponse = await tmdbHandler(`tv/on_the_air?page=${page}`)
+  const moviesJson = await moviesResponse.json()
+  return moviesJson
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const [popularMovies, popularTVS] = await Promise.all([
-    getPopularMovies(),
+  const [popularTVS, topTVS, onAirTVS] = await Promise.all([
     getPopularTVS(),
+    getTopTVS(),
+    getOnAirTVS(),
   ])
   return {
     props: {
-      popularMovies,
       popularTVS,
+      topTVS,
+      onAirTVS,
     }, // will be passed to the page component as props
   }
 }
 
-const TvShows: NextPage = ({}: InferGetServerSidePropsType<
-  typeof getServerSideProps
->) => {
-  return <div>TV Shows</div>
+const Movies: NextPage = ({
+  popularTVS,
+  topTVS,
+  onAirTVS,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  return (
+    <TheTvShows popularTVS={popularTVS} topTVS={topTVS} onAirTVS={onAirTVS} />
+  )
 }
 
-export default TvShows
+export default Movies

@@ -4,7 +4,7 @@ import type {
   TopMoviesType,
   UpcomingMoviesType,
 } from '../types/movies'
-import PopularCarousel from './PopularCarousel'
+import MediaCarousel from './MediaCarousel'
 import Title from './Title'
 
 type Props = {
@@ -18,11 +18,11 @@ const TheMovies = ({ popularMovies, topMovies, upcomingMovies }: Props) => {
     <div className="overflow-x-hidden px-5 md:px-10">
       <div className="flex flex-col gap-y-5">
         <Title>Popular Movies</Title>
-        <PopularCarousel items={popularMovies} />
+        <MediaCarousel items={popularMovies} />
         <Title>Top Rated Movies</Title>
-        <PopularCarousel items={topMovies} />
+        <MediaCarousel items={topMovies} />
         <Title>Upcoming Movies</Title>
-        <PopularCarousel items={upcomingMovies} />
+        <MediaCarousel items={upcomingMovies} />
       </div>
     </div>
   )

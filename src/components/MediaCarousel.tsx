@@ -3,7 +3,7 @@ import type {
   TopMoviesType,
   UpcomingMoviesType,
 } from '../types/movies'
-import type { PopularTVSType } from '../types/tv'
+import type { PopularTVSType, TopTVSType, OnAirTVSType } from '../types/tv'
 import MediaCard from './MediaCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Lazy, FreeMode, Pagination, Navigation } from 'swiper'
@@ -12,10 +12,16 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 type Props = {
-  items: PopularMoviesType | PopularTVSType | TopMoviesType | UpcomingMoviesType
+  items:
+    | PopularMoviesType
+    | PopularTVSType
+    | TopMoviesType
+    | UpcomingMoviesType
+    | TopTVSType
+    | OnAirTVSType
 }
 
-const PopularCarousel = ({ items }: Props) => {
+const MediaCarousel = ({ items }: Props) => {
   return (
     <Swiper
       freeMode
@@ -43,4 +49,4 @@ const PopularCarousel = ({ items }: Props) => {
   )
 }
 
-export default PopularCarousel
+export default MediaCarousel
