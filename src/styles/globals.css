@@ -8,11 +8,16 @@ body {
 }
 
 .swiper-slide {
-    @apply max-w-min
+    @apply max-w-min;
 }
 
 .swiper-button-prev, .swiper-button-next {
     --swiper-navigation-color: theme(colors.teal.300);
     --swiper-navigation-size: 20px;
     @apply bg-black/40 rounded-full p-5 hover:bg-black/70
+}
+
+.swiper{
+    padding: 100px 0 !important;
+    margin: -100px 0 !important;
 }
