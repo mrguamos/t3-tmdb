@@ -10,6 +10,6 @@ body {
 .slick-slide > div { margin: 0 5px; }
 
 .slick-list {
-    padding: 100px 0;
-    margin: -100px 0;
+    padding: 100px 0 !important;
+    margin: -100px 0 !important;
 }
