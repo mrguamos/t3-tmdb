@@ -32,11 +32,7 @@ const MediaCarousel = ({ items }: Props) => {
       loopFillGroupWithBlank={true}
       navigation={true}
       modules={[Lazy, FreeMode, Pagination, Navigation]}
-      className={'w-full space-x-2'}
-      style={{
-        overflow: 'visible',
-        clipPath: 'inset( -100vw -100vw -100vw 0 )',
-      }}
+      className={'w-full'}
     >
       {items.results?.map((item) => {
         return (

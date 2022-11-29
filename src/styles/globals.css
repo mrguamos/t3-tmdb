@@ -8,7 +8,7 @@ body {
 }
 
 .swiper-slide {
-    width: auto !important;
+    @apply max-w-min
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -16,5 +16,3 @@ body {
     --swiper-navigation-size: 20px;
     @apply bg-black/40 rounded-full p-5 hover:bg-black/70
 }
-
-.slick-slide > div { margin: 0 10px; }
