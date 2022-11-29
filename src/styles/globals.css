@@ -1,3 +1,5 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,14 +9,9 @@ body {
     @apply bg-neutral-900 text-white
 }
 
-.swiper-slide {
-    width: auto !important;
-}
+.slick-slide > div { margin: 0 5px; }
 
-.swiper-button-prev, .swiper-button-next {
-    --swiper-navigation-color: theme(colors.teal.300);
-    --swiper-navigation-size: 20px;
-    @apply bg-black/40 rounded-full p-5 hover:bg-black/70
+.slick-list {
+    padding: 100px 0;
+    margin: -100px 0;
 }
-
-.slick-slide > div { margin: 0 10px; }
