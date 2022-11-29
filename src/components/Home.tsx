@@ -12,7 +12,7 @@ type Props = {
 const Home = ({ popularMovies, popularTVS }: Props) => {
   return (
     <div className="px-5 md:px-10">
-      <div className="flex flex-col gap-y-5">
+      <div className="flex flex-col gap-y-10">
         <Title>Popular Movies</Title>
         <MediaCarousel items={popularMovies} />
         <Title>Popular TV Shows</Title>

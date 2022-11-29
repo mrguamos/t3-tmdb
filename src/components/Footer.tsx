@@ -7,7 +7,7 @@ import { TbBrandVercel } from 'react-icons/tb'
 
 const Footer = () => {
   return (
-    <div className="mt-10 flex flex-col items-center justify-center space-y-5">
+    <div className="mt-20 flex flex-col items-center justify-center space-y-5">
       <div className="flex items-center justify-center space-x-2">
         <SiThemoviedatabase className="h-10 w-10 text-teal-500" />
         <span className="text-xl font-semibold">Next Movies</span>
