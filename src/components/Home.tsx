@@ -1,12 +1,11 @@
 import React from 'react'
-import type { PopularMoviesType } from '../types/movies'
-import type { PopularTVSType } from '../types/tv'
+import type { Media } from '../types/media'
 import MediaCarousel from './MediaCarousel'
 import Title from './Title'
 
 type Props = {
-  popularMovies: PopularMoviesType
-  popularTVS: PopularTVSType
+  popularMovies: Media
+  popularTVS: Media
 }
 
 const Home = ({ popularMovies, popularTVS }: Props) => {
@@ -14,9 +13,9 @@ const Home = ({ popularMovies, popularTVS }: Props) => {
     <div className="px-5 md:px-10">
       <div className="flex flex-col gap-y-10">
         <Title>Popular Movies</Title>
-        <MediaCarousel items={popularMovies} />
+        <MediaCarousel item={popularMovies} />
         <Title>Popular TV Shows</Title>
-        <MediaCarousel items={popularTVS} />
+        <MediaCarousel item={popularTVS} />
       </div>
     </div>
   )

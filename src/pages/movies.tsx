@@ -5,25 +5,21 @@ import type {
 } from 'next'
 import TheMovies from '../components/TheMovies'
 import tmdbHandler from '../services/tmdb'
-import type {
-  PopularMoviesType,
-  TopMoviesType,
-  UpcomingMoviesType,
-} from '../types/movies'
+import type { Media } from '../types/media'
 
-async function getPopularMovies(page = 1): Promise<PopularMoviesType> {
+async function getPopularMovies(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`movie/popular?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson
 }
 
-async function getTopMovies(page = 1): Promise<TopMoviesType> {
+async function getTopMovies(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`movie/top_rated?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson
 }
 
-async function getUpcomingMovies(page = 1): Promise<UpcomingMoviesType> {
+async function getUpcomingMovies(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`movie/upcoming?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson

@@ -1,16 +1,12 @@
 import React from 'react'
-import type {
-  PopularMoviesType,
-  TopMoviesType,
-  UpcomingMoviesType,
-} from '../types/movies'
+import type { Media } from '../types/media'
 import MediaCarousel from './MediaCarousel'
 import Title from './Title'
 
 type Props = {
-  popularMovies: PopularMoviesType
-  topMovies: TopMoviesType
-  upcomingMovies: UpcomingMoviesType
+  popularMovies: Media
+  topMovies: Media
+  upcomingMovies: Media
 }
 
 const TheMovies = ({ popularMovies, topMovies, upcomingMovies }: Props) => {
@@ -18,11 +14,11 @@ const TheMovies = ({ popularMovies, topMovies, upcomingMovies }: Props) => {
     <div className="px-5 md:px-10">
       <div className="flex flex-col gap-y-10">
         <Title>Popular Movies</Title>
-        <MediaCarousel items={popularMovies} />
+        <MediaCarousel item={popularMovies} />
         <Title>Top Rated Movies</Title>
-        <MediaCarousel items={topMovies} />
+        <MediaCarousel item={topMovies} />
         <Title>Upcoming Movies</Title>
-        <MediaCarousel items={upcomingMovies} />
+        <MediaCarousel item={upcomingMovies} />
       </div>
     </div>
   )

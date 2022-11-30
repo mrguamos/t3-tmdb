@@ -2,16 +2,15 @@ import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { type NextPage } from 'next'
 import Home from '../components/Home'
 import tmdbHandler from '../services/tmdb'
-import type { PopularMoviesType } from '../types/movies'
-import type { PopularTVSType } from '../types/tv'
+import type { Media } from '../types/media'
 
-async function getPopularMovies(page = 1): Promise<PopularMoviesType> {
+async function getPopularMovies(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`movie/popular?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson
 }
 
-async function getPopularTVS(page = 1): Promise<PopularTVSType> {
+async function getPopularTVS(page = 1): Promise<Media> {
   const tvsResponse = await tmdbHandler(`tv/popular?page=${page}`)
   const tvsJson = await tvsResponse.json()
   return tvsJson

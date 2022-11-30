@@ -1,13 +1,13 @@
 import React from 'react'
-import type { PopularTVSType, TopTVSType, OnAirTVSType } from '../types/tv'
+import type { Media } from '../types/media'
 
 import MediaCarousel from './MediaCarousel'
 import Title from './Title'
 
 type Props = {
-  popularTVS: PopularTVSType
-  topTVS: TopTVSType
-  onAirTVS: OnAirTVSType
+  popularTVS: Media
+  topTVS: Media
+  onAirTVS: Media
 }
 
 const TheTvShows = ({ popularTVS, topTVS, onAirTVS }: Props) => {
@@ -15,11 +15,11 @@ const TheTvShows = ({ popularTVS, topTVS, onAirTVS }: Props) => {
     <div className="px-5 md:px-10">
       <div className="flex flex-col gap-y-10">
         <Title>Popular TV Shows</Title>
-        <MediaCarousel items={popularTVS} />
+        <MediaCarousel item={popularTVS} />
         <Title>Top Rated TV Shows</Title>
-        <MediaCarousel items={topTVS} />
+        <MediaCarousel item={topTVS} />
         <Title>On Air TV Shows</Title>
-        <MediaCarousel items={onAirTVS} />
+        <MediaCarousel item={onAirTVS} />
       </div>
     </div>
   )

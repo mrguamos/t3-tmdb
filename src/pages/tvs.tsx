@@ -5,21 +5,21 @@ import type {
 } from 'next'
 import TheTvShows from '../components/TheTvShows'
 import tmdbHandler from '../services/tmdb'
-import type { PopularTVSType, TopTVSType, OnAirTVSType } from '../types/tv'
+import type { Media } from '../types/media'
 
-async function getPopularTVS(page = 1): Promise<PopularTVSType> {
+async function getPopularTVS(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`tv/popular?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson
 }
 
-async function getTopTVS(page = 1): Promise<TopTVSType> {
+async function getTopTVS(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`tv/top_rated?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson
 }
 
-async function getOnAirTVS(page = 1): Promise<OnAirTVSType> {
+async function getOnAirTVS(page = 1): Promise<Media> {
   const moviesResponse = await tmdbHandler(`tv/on_the_air?page=${page}`)
   const moviesJson = await moviesResponse.json()
   return moviesJson

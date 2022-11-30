@@ -1,16 +1,16 @@
-import MediaCard from './MediaCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Lazy, FreeMode, Pagination, Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import type { Media } from '../types/media'
+import type { Credits } from '../types/media'
+import CastCard from './CastCard'
 
 type Props = {
-  item: Media
+  item: Credits
 }
 
-const MediaCarousel = ({ item }: Props) => {
+const CreditCarousel = ({ item }: Props) => {
   return (
     <Swiper
       freeMode
@@ -23,10 +23,10 @@ const MediaCarousel = ({ item }: Props) => {
       modules={[Lazy, FreeMode, Pagination, Navigation]}
       className={'w-full'}
     >
-      {item.results?.map((result) => {
+      {item.cast?.map((item) => {
         return (
-          <SwiperSlide key={result.id}>
-            <MediaCard details={result} />
+          <SwiperSlide key={item.id}>
+            <CastCard details={item} />
           </SwiperSlide>
         )
       })}
@@ -34,4 +34,4 @@ const MediaCarousel = ({ item }: Props) => {
   )
 }
 
-export default MediaCarousel
+export default CreditCarousel
