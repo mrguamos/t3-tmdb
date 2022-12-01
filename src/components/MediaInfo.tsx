@@ -25,8 +25,8 @@ const MediaInfo = ({ mediaDetails, mediaCredits }: Props) => {
             lg:bg-gradient-to-r lg:from-black lg:via-transparent/5 lg:to-transparent"
             ></div>
           </div>
-          <div className="absolute flex h-full w-full flex-col items-center justify-end gap-5 p-10 lg:w-[40%] lg:items-start lg:justify-center lg:gap-10">
-            <span className="text-5xl">
+          <div className="absolute flex h-full w-full flex-col items-center justify-end gap-5 p-10 lg:w-[50%] lg:items-start lg:justify-center lg:gap-10 xl:w-[40%]">
+            <span className="text-center text-xl sm:text-2xl lg:text-left xl:text-4xl ">
               {mediaDetails.title || mediaDetails.name}
             </span>
             <div className="flex space-x-2 text-teal-400 lg:items-center">
@@ -52,7 +52,7 @@ const MediaInfo = ({ mediaDetails, mediaCredits }: Props) => {
                 <span>Season {mediaDetails.number_of_seasons}</span>
               )}
             </div>
-            <span className="hidden font-light lg:block">
+            <span className="hidden font-light  lg:block">
               {mediaDetails.overview}
             </span>
           </div>
