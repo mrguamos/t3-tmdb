@@ -11,8 +11,8 @@ const CastCard = (props: Props) => {
   const details = props.details
   const [loading, setLoading] = useState(true)
   return (
-    <div className="inline-flex h-full w-full flex-shrink-0 flex-col space-y-2">
-      <div className="relative h-40 w-28 flex-shrink-0 md:h-52 md:w-36 lg:h-64 lg:w-40 xl:h-72 xl:w-48">
+    <div className="inline-flex h-full w-28  flex-col space-y-2 md:w-36 lg:w-40 xl:w-48">
+      <div className="relative h-40 w-full  md:h-52 lg:h-64 xl:h-72">
         {loading ? (
           <div className="flex h-full items-center justify-center">
             <FaSpinner className="h-5 w-5 animate-spin" />

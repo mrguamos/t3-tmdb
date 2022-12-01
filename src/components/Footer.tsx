@@ -34,7 +34,7 @@ const Footer = () => {
           href={'https://create.t3.gg/'}
           target={'_blank'}
           aria-label="T3 Stack"
-          className="relative  h-10 w-10 flex-shrink-0"
+          className="relative  h-10 w-10 "
         >
           <Image
             src={'/images/t3.svg'}

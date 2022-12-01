@@ -17,16 +17,19 @@ const MediaInfo = ({ mediaDetails, mediaCredits }: Props) => {
   return (
     <div className="px-5 md:px-10">
       <div className="flex flex-col gap-y-10">
-        <div className="relative flex h-[675px] bg-black">
-          <div className="absolute right-0 flex h-full w-[70%]">
+        <div className="relative flex aspect-[4/3] w-full bg-black md:aspect-[2/1] lg:aspect-[25/9]">
+          <div className="absolute right-0 flex h-full w-full lg:w-[70%]">
             <MediaPoster details={mediaDetails}></MediaPoster>
-            <div className="absolute h-full w-full bg-gradient-to-r from-black via-transparent/5 to-transparent"></div>
+            <div
+              className="absolute h-full w-full bg-gradient-to-t from-black via-transparent/5 to-transparent
+            lg:bg-gradient-to-r lg:from-black lg:via-transparent/5 lg:to-transparent"
+            ></div>
           </div>
-          <div className="absolute flex h-full w-[40%] flex-col justify-center gap-10 p-10">
-            <span className="text-5xl ">
+          <div className="absolute flex h-full w-full flex-col items-center justify-end gap-5 p-10 lg:w-[40%] lg:items-start lg:justify-center lg:gap-10">
+            <span className="text-5xl">
               {mediaDetails.title || mediaDetails.name}
             </span>
-            <div className="flex items-center space-x-2 text-teal-400">
+            <div className="flex space-x-2 text-teal-400 lg:items-center">
               <div className="flex">
                 <span>{mediaDetails.vote_average}</span> <span>/10</span>
               </div>
@@ -49,7 +52,9 @@ const MediaInfo = ({ mediaDetails, mediaCredits }: Props) => {
                 <span>Season {mediaDetails.number_of_seasons}</span>
               )}
             </div>
-            <span className="font-light">{mediaDetails.overview}</span>
+            <span className="hidden font-light lg:block">
+              {mediaDetails.overview}
+            </span>
           </div>
         </div>
         <Title>Cast</Title>

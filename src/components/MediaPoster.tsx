@@ -10,8 +10,8 @@ type Props = {
 const MediaPoster = ({ details }: Props) => {
   const [loading, setLoading] = useState(true)
   return (
-    <div className="flex h-full w-full flex-shrink-0 flex-col space-y-2">
-      <div className="relative h-full w-full flex-shrink-0">
+    <div className="flex h-full w-full flex-col space-y-2">
+      <div className="relative h-full w-full ">
         {loading ? (
           <div className="flex h-full items-center justify-center">
             <FaSpinner className="h-5 w-5 animate-spin" />
